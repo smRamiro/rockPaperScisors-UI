@@ -1,0 +1,104 @@
+header{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: 2%;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-areas: "scorePlayer1 winner scorePlayer2";
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: .5%;
+}
+
+body{
+    background-color: rgb(32, 32, 32);
+}
+
+main{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+    "player1Buttons game player2Buttons";
+    gap: 15% 5%;
+    margin: 1% 0;
+    color: white;
+}
+
+.showGame{
+    min-width: 500px;
+    min-height: 500px;
+    grid-area: game;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.616);
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "player1ShowGame winner player2ShowGame";
+}
+
+.player1Show, .player2Show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.player1Show{
+    grid-area: player1ShowGame;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.player2Show{
+    grid-area: player2ShowGame;
+    align-items: flex-end;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+
+.player1ButtonTitle{
+    margin-bottom: 5%;
+}
+
+.player2ButtonTitle{
+    margin-bottom: 5%;
+}
+
+
+.player1Buttons, .player2Buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.player1Buttons{
+    margin-left: 25%;
+}
+
+.player2Buttons{
+    margin-right: 25%;
+}
+
+button{
+    min-width: 80px;
+    min-height: 40px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.616);
+    border-style: none;
+}
+
+img{
+    max-width: 50%;
+    border-radius: 4px;
+}
+
+.scorePlayer1, .scorePlayer2, .winner{
+    display: flex;
+    justify-content: center;    
+}

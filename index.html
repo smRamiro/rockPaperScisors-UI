@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rock papers scisors</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>rock papers scissors</title>
 </head>
+
+<header><h1>Rock - Paper - Scissors</h1></header>
 <body>
-    <script src="scripts/rock-paper-scisors.js"></script>
+    <main class="game">
+        
+        <section class="player1Buttons">
+            <h2 class="player1ButtonTitle">Player 1</h2>
+            <button class="player1gameButtons">Rock</button>
+            <button class="player1gameButtons">Paper</button>
+            <button class="player1gameButtons">Scissors</button>
+        </section>
+
+        
+        <section class="player2Buttons">
+            <h2 class="player2ButtonTitle">Player 2</h2>
+            <button class="player2gameButtons">Rock</button>
+            <button class="player2gameButtons">Paper</button>
+            <button class="player2gameButtons">Scissors</button>
+        </section>
+
+        <section class="showGame">
+            <div class="player1Show">
+                <h3>Player 1 : 0 points</h3>
+                <img src="imgs/rockFinal.png" alt="Player1 has choosen" class="player1ChooseImage">
+            </div>
+
+            <div class="player2Show">
+                <h3>Player 2 : 0 points</h3>
+                <img src="imgs/rockFinal.png" alt="Player2 has choosen" class="player2ChooseImage">
+            </div>
+            
+        </section>
+        
+    </main>
+
+    <script src="scripts/rock-paper-scissors.js"></script>
+
 </body>
+
+<footer>
+    <section class="scorePlayer1">
+        <h3>Player 1 score: 0</h3>
+    </section>
+
+    <section class="winner">
+        <h3>Winner: Player 1</h3>
+    </section>
+
+    <section class="scorePlayer2">
+        <h3>PLayer 2 score: 0</h3>
+    </section>
+</footer>
 </html>
