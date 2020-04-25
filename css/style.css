@@ -12,11 +12,10 @@ header{
 
 footer{
     display: grid;
-    grid-template-columns: repeat(3,auto);
-    grid-template-areas: "scorePlayer1 winner scorePlayer2";
-    background-color: rgb(12, 12, 12);
-    color: white;
-    padding: .5%;
+    background-color: black;
+    grid-area: footer;
+    margin-top: 5.5%;
+    position: sticky;
 }
 
 body{
@@ -27,7 +26,9 @@ main{
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-areas:
-    "player1Buttons game player2Buttons";
+    "player1Buttons game player2Buttons"
+    "nicknameForm nicknameForm nicknameForm"
+    "footer footer footer";
     gap: 15% 0;
     margin: 1% 0;
     color: white;
@@ -91,6 +92,10 @@ h2{
     margin: 35% 5% 50% 0;
 }
 
+button:disabled{
+    color: initial;
+}
+
 button{
     width: 120px;
     height: 40px;
@@ -117,4 +122,12 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.playerNameForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: nicknameForm;
+    margin-top: -5%;
 }
