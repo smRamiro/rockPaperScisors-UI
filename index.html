@@ -22,10 +22,10 @@
 
         
         <section class="player2Buttons">
-            <h2 class="player2ButtonTitle">Player 2</h2>
-            <button class="player2gameButtons">Rock</button>
-            <button class="player2gameButtons">Paper</button>
-            <button class="player2gameButtons">Scissors</button>
+            <h2 class="player2ButtonTitle">Computer</h2>
+            <button class="player2gameButtons" disabled>Rock</button>
+            <button class="player2gameButtons" disabled>Paper</button>
+            <button class="player2gameButtons" disabled>Scissors</button>
         </section>
 
         <section class="showGame">
@@ -33,11 +33,21 @@
                 <img src="imgs/rockFinal.png" alt="Player1 has choosen" class="player1ChooseImage">
             </div>
 
+            <div class="showGameText">
+                <h2>Round: <span id="gameRound">1 </span><p id="gameTextParagraph">First player's turn</p></h2>
+                
+            </div>
+
             <div class="player2Show">
                 <img src="imgs/rockFinal.png" alt="Player2 has choosen" class="player2ChooseImage">
             </div>
-            
         </section>
+
+        <div class="playerNameForm">
+            <form action="">
+                <input type="text" name="playerName" id="">
+            </form>
+        </div>
         
     </main>
 
@@ -47,15 +57,15 @@
 
 <footer>
     <section class="scorePlayer1">
-        <h3>Player 1 score: 0</h3>
+        <h3>Player 1 score: <span id="player1ScoreParagraph"> 0</span></h3> 
     </section>
 
     <section class="winner">
-        <h3>Winner: Player 1</h3>
+        <h3>Winner: <span>No one... yet.</span></h3> 
     </section>
 
     <section class="scorePlayer2">
-        <h3>Player 2 score: 0</h3>
+        <h3>Computer score: <span id="player2ScoreParagraph"> 0</span></h3> 
     </section>
 </footer>
 </html>

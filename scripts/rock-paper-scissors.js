@@ -1,74 +1,117 @@
-let player1Selection = "";
-let player2Selection = "";
+const oneButtons = document.querySelectorAll(".player1gameButtons");
+let showGameResult = document.querySelector("#gameTextParagraph");
+let player1Image = document.querySelector(".player1ChooseImage");
+let computerImage = document.querySelector(".player2ChooseImage");
+let roundText = document.querySelector("#gameRound");
+let player1Score = 0;
+let player2Score = 0;
+let roundCount = 1;
 
-game();
+for (let i = 0; i < oneButtons.length; i++) {
+    oneButtons[i].addEventListener("click", game)
+}
+
+const twoButtons = document.querySelectorAll(".player2gameButtons");
+
+for (let i = 0; i < twoButtons.length; i++) {
+    twoButtons[i].addEventListener("click", game);
+}
 
 function game(e){
 
-    const oneButtons = document.querySelectorAll(".player1gameButtons");
+let player1Selection = [e.toElement.textContent].toString().toLowerCase();
+let computerSelection = "";
+let randomComputerSelection = Math.random();
 
-    for (let i = 0; i < oneButtons.length; i++) {
-        oneButtons[i].addEventListener("click", rockPaperScissors)
-    }
+console.log(randomComputerSelection);
+console.log(computerSelection);
 
-    const twoButtons = document.querySelectorAll(".player2gameButtons");
+if (randomComputerSelection < 0.3){
+    computerSelection = "rock";
+}else if(randomComputerSelection > 0.6){
+    computerSelection = "paper";
+}else if(randomComputerSelection > 0.3){
+    computerSelection = "scissors";
+}
 
-    for (let i = 0; i < twoButtons.length; i++) {
-        twoButtons[i].addEventListener("click", rockPaperScissors);
-    }
+++roundCount;
+roundText.textContent= roundCount;
 
+switch(player1Selection){
+    case "rock":
+        player1Image.setAttribute("src","imgs/rockFinal.png");
+        if(computerSelection == "rock"){
+            computerImage.setAttribute("src","imgs/rockFinal.png");
+            let result = `It\'s a tie.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
+            
+        }else if(computerSelection == "paper"){
+            computerImage.setAttribute("src","imgs/paper.png");
+            ++player2Score;
+            let result = `Computer wins; ${computerSelection} DESTROYS ${player1Selection}.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
+            }else{
+                computerImage.setAttribute("src","imgs/scissors.png");
+            ++player1Score;
+            let result = `Player1 wins!; ${player1Selection} DESTROYS ${computerSelection}.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
 
-    function rockPaperScissors(e){
-        player1Selection = [e.toElement.textContent].toString().toLowerCase();
-        player2Selection = [e.toElement.textContent].toString().toLowerCase();
-
-        switch(player1Selection){
-            case "rock":
-
-                if(player2Selection == "rock"){
-                    let result = `It\'s a tie. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
-                }else if(player2Selection == "paper"){
-                    ++player2Score;
-                    let result = `Player 2 wins; ${player2Selection} DESTROYS ${player1Selection}. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
-                }else{
-                    ++player1Score;
-                    let result = `Player1 wins!; ${player1Selection} DESTROYS ${player2Selection}. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
-                }
+            }
     
-            case "paper":
-                
-                if(player2Selection == "rock"){
-                    ++player1Score;
-                    let result = `Player1 wins!; ${player1Selection} DESTROYS ${player2Selection}. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
+    case "paper":
+        player1Image.setAttribute("src","imgs/paper.png");
+        if(computerSelection == "rock"){
+            computerImage.setAttribute("src","imgs/rockFinal.png");
+            ++player1Score;
+            let result = `Player1 wins!; ${player1Selection} DESTROYS ${computerSelection}.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
                     
-                }else if(player2Selection == "paper"){
-                    let result = `It\'s a tie. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
+        }else if(computerSelection == "paper"){
+            computerImage.setAttribute("src","imgs/paper.png");
+            let result = `It\'s a tie.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
     
-                }else if (player2Selection == "scissors"){
-                    ++player2Score;
-                    let result = `Player 2 wins; ${player2Selection} DESTROYS ${player1Selection}. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
-                }
+        }else if (computerSelection == "scissors"){
+            computerImage.setAttribute("src","imgs/scissors.png");
+            ++player2Score;
+            let result = `Computer wins; ${computerSelection} DESTROYS ${player1Selection}.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
+        }
     
-            case "scissors":
-
-                if(player2Selection == "rock"){
-                    ++player2Score;
-                    let result = `Player 2 wins; ${player2Selection} DESTROYS ${player1Selection}. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
-                }else if(player2Selection == "paper"){
-                    ++player1Score;
-                    let result = `Player1 wins!; ${player1Selection} DESTROYS ${player2Selection}. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
-                }else{
-                    let result = `It\'s a tie. Score p1: ${player1Score} Score p2: ${player2Score}`;
-                    return result;
-                }
+    case "scissors":
+        player1Image.setAttribute("src","imgs/scissors.png");
+        if(computerSelection == "rock"){
+            computerImage.setAttribute("src","imgs/rockFinal.png");
+            ++player2Score;
+            let result = `Computer wins; ${computerSelection} DESTROYS ${player1Selection}.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
+        }else if(computerSelection == "paper"){
+            computerImage.setAttribute("src","imgs/paper.png");
+            ++player1Score;
+            let result = `Player1 wins!; ${player1Selection} DESTROYS ${computerSelection}.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
+        }else{
+            computerImage.setAttribute("src","imgs/scissors.png");
+            let result = `It\'s a tie.`;
+            console.log(result);
+            showGameResult.textContent = result;
+            return result;
         }
     }
 }

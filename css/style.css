@@ -25,7 +25,7 @@ body{
 
 main{
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: 20% 60% 20%;
     grid-template-areas:
     "player1Buttons game player2Buttons";
     gap: 15% 0;
@@ -77,18 +77,18 @@ h2{
 .player1Buttons, .player2Buttons{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .player1Buttons{
-    margin: 35% 0 75% 5%;
+    margin: 35% 0 50% 5%;
     /* margin-left: 5%;
     margin-bottom: 50%; */
 }
 
 .player2Buttons{
-    margin: 35% 5% 75% 0;
+    margin: 35% 5% 50% 0;
 }
 
 button{
@@ -111,4 +111,10 @@ img{
 
 img{
     margin-bottom: 0%;
+}
+
+.showGameText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
